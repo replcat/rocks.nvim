@@ -332,7 +332,7 @@ end, 2)
 --- Post-install actions
 function helpers.postInstall()
     if config.update_remote_plugins and type(vim.cmd.UpdateRemotePlugins) == "function" then
-        pcall(vim.cmd.UpdateRemotePlugins)
+        pcall(vim.cmd("silent UpdateRemotePlugins"))
     end
     -- Re-generate help tags
     if config.generate_help_pages then
